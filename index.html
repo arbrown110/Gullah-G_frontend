@@ -8,7 +8,28 @@
 </head>
 <body>
     <div id="collection-container">
-        
+      <form id="create-collection-form" style="">
+        <h3>Create Content for your Collection</h3>
+        <input id='input-name' type="text" name="name" value="" placeholder="Enter the name..." class="input-text">
+        <br><br>
+        <input id='input-url' type="text" name="image" value="" placeholder="Enter the image URL..." class="input-text">
+        <br><br>
+        <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Enter your the description..."></textarea>
+        <br><br>
+        <input id='input-source-url' type="text" name="source" value="" placeholder="Enter your the source URL..." class="input-text">
+        <br><br>
+        <p>Select a Category </p>
+        <select id="categories" name="categories">
+          <option value="1">Food</option>
+          <option value="2">Media</option>
+          <option value="3">Clothing</option>
+          <option value="3">Travel</option>
+        </select>
+        <br><br>
+        <input id= 'create-button' type="submit" name="submit" value="Create New Syllabus" class="submit">
+      </form>
+    </div>
+
     </div>
 </body>
 </html>
