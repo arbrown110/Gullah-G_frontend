@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function createFormHandler(e) {
     e.preventDefault()
-    debugger
     const nameInput = document.querySelector('#input-name').value
     const imageInput = document.querySelector('#input-url').value
     const descriptionInput = document.querySelector('#input-description').value
@@ -44,7 +43,7 @@ function createFormHandler(e) {
 
   function postCollection(name, image_url, description, source_url, category_id) {
     // confirm these values are coming through properly
-    console.log(name, image_url, description, source_url, category_id);
+    //console.log(name, image_url, description, source_url, category_id);
     // build body object
     let bodyData = {name, image_url, description, source_url, category_id}
   
@@ -53,3 +52,19 @@ function createFormHandler(e) {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(bodyData)
+    })
+    .then(response => response.json())
+    .then(collection => {
+        console.log(collection);
+        const collectionData = collection.data
+        const collectionMarkup = `
+        <div data-id=${collection.id}>
+            <img src=${collection.attributes.image_url} height="200" width="250">
+            <h3>${collection.attributes.name}</h3>
+            <p>${collection.attributes.category.name}</p>
+            <button data-id=${collection.id}>edit</button>
+        </div>
+        <br><br>`;
+        document.querySelector('#collection-container').innerHTML += collectionMarkup
+    })
+}
