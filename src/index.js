@@ -15,23 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(collections => {
         collections.data.forEach(collection => {
             // nested data in console and over each rending attributes
-         render(collection)
+          
+          debugger
+            let newCollection = new Collection(collection, collection.attributes)
+          // new instance  hit debugger
+            document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard() //error possbily due to "name" attribute
         })
     })
 }
 
-function render(collection){
-  const collectionMarkup = `
-    <div data-id=${collection.id}>
-      <img src=${collection.attributes.image_url} height="200" width="250">
-      <h3>${collection.attributes.name}</h3>
-      <p>${collection.attributes.category.name}</p>
-      <button data-id=${collection.id}>edit</button>
-    </div>
-    <br><br>`;
-
-    document.querySelector('#collection-container').innerHTML += collectionMarkup
-}
 
 function createFormHandler(e) {
     e.preventDefault()
@@ -62,6 +54,8 @@ function createFormHandler(e) {
     .then(collection => {
         console.log(collection);
         const collectionData = collection.data
-        render(collectionData)
+        let newCollection = new Collection(collectionData, collectionData.attributes)
+        // new instance  hit debugger
+          document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard() //error possbily due to "name" attribute
     })
 }
