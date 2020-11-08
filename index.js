@@ -3,10 +3,10 @@ const endPoint= "http://localhost:3000/api/v1/collections"
 document.addEventListener('DOMContentLoaded', () => {
     getCollections()
 
-    let createCollectionForm = document.querySelector("#create-collection-form")
+    const createCollectionForm = document.querySelector("#create-collection-form")
 
     createCollectionForm.addEventListener("submit", (e) => createFormHandler(e))
-});
+})
 
 
    function getCollections() {
@@ -14,24 +14,29 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.json())
     .then(collections => {
         collections.data.forEach(collection => {
-
             // nested data in console and over each rending attributes
-            const collectionMarkup = `
-          <div data-id=${collection.id}>
-            <img src=${collection.attributes.image_url} height="200" width="250">
-            <h3>${collection.attributes.name}</h3>
-            <p>${collection.attributes.category.name}</p>
-            <button data-id=${collection.id}>edit</button>
-          </div>
-          <br><br>`;
-
-          document.querySelector('#collection-container').innerHTML += collectionMarkup
-      })
+         render(collection)
+        })
     })
+}
+
+function render(collection){
+  const collectionMarkup = `
+    <div data-id=${collection.id}>
+      <img src=${collection.attributes.image_url} height="200" width="250">
+      <h3>${collection.attributes.name}</h3>
+      <p>${collection.attributes.category.name}</p>
+      <button data-id=${collection.id}>edit</button>
+    </div>
+    <br><br>`;
+
+    document.querySelector('#collection-container').innerHTML += collectionMarkup
 }
 
 function createFormHandler(e) {
     e.preventDefault()
+    //console.log(e);
+    //WHY IS THIS NOT WORKING!!!!!!!!!!!!!!!!!
     const nameInput = document.querySelector('#input-name').value
     const imageInput = document.querySelector('#input-url').value
     const descriptionInput = document.querySelector('#input-description').value
@@ -57,14 +62,6 @@ function createFormHandler(e) {
     .then(collection => {
         console.log(collection);
         const collectionData = collection.data
-        const collectionMarkup = `
-        <div data-id=${collection.id}>
-            <img src=${collection.attributes.image_url} height="200" width="250">
-            <h3>${collection.attributes.name}</h3>
-            <p>${collection.attributes.category.name}</p>
-            <button data-id=${collection.id}>edit</button>
-        </div>
-        <br><br>`;
-        document.querySelector('#collection-container').innerHTML += collectionMarkup
+        render(collectionData)
     })
 }
