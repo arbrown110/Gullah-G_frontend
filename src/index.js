@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         collections.data.forEach(collection => {
             // nested data in console and over each rending attributes
           
-          debugger
+          //debugger
             let newCollection = new Collection(collection, collection.attributes)
           // new instance  hit debugger
             document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard() //error possbily due to "name" attribute
