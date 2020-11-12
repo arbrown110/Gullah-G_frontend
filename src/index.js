@@ -1,7 +1,8 @@
 const endPoint= "http://localhost:3000/api/v1/collections"
 
 document.addEventListener('DOMContentLoaded', () => {
-    getCollections()
+  console.log("Dom is Loaded");
+  getCollections()
 
     const createCollectionForm = document.querySelector("#create-collection-form")
 
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-   function getCollections() {
+function getCollections() {
     fetch (endPoint)
     .then(response => response.json())
     .then(collections => {
@@ -35,14 +36,14 @@ function createFormHandler(e) {
     const sourceInput = document.querySelector('#input-source-url').value
     const categoryInput = document.querySelector('#categories').value
     const categoryId = parseInt(categoryInput)
-    postCollection(nameInput, imageInput, descriptionInput, sourceInput, categoryInput)
+    postFetch(nameInput, imageInput, descriptionInput, sourceInput, categoryId)
   }
 
-  function postCollection(name, image_url, description, source_url, category_id) {
+  function postFetch(name, image_url, description, source_url, category_id) {
     // confirm these values are coming through properly
-    //console.log(name, image_url, description, source_url, category_id);
+    console.log(name, image_url, description, source_url, category_id);
     // build body object
-    let bodyData = {name, image_url, description, source_url, category_id}
+    const bodyData = {name, image_url, description, source_url, category_id}
   
     fetch(endPoint, {
       // POST request

@@ -8,6 +8,7 @@ class Collection {
         this.source_url = collectionAttributes.source_url
         this.category = collectionAttributes.category
         Collection.all.push(this)
+        console.log(this);
     }
     renderCollectionCard() {
         //debugger

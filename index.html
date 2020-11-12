@@ -24,7 +24,7 @@
 
     <style>
       .bd-placeholder-img {
-        font-size: 40px;
+        font-size: 1.125rem;
         text-anchor: middle;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -32,9 +32,9 @@
         user-select: none;
       }
 
-      @media (min-width: 601px) {
+      @media (min-width: 768px) {
         .bd-placeholder-img-lg {
-            font-size: 40px;
+          font-size: 3.5rem;
         }
       }
     </style>
@@ -96,14 +96,16 @@
           <input type="text" class="form-control" id="input-source-url" aria-describedby="sourceHelp">
           <small id="sourceHelp" class="form-text text-muted">Where did you get this information from</small>
         </div>
-        <p>select a Category</p>
+        <div class="form-group"></div>
           <select id="categories" name="categories">
+            <p>Select a Category</p>
             <option value="1">Food</option>
             <option value="2">Media</option>
             <option value="3">Clothing</option>
-            <option value="3">Travel</option>
+            <option value="4">Travel</option>
           </select>
         </div>
+       
         <button type="submit" class="btn btn-success">Submit</button>
       </form>
     </div>
