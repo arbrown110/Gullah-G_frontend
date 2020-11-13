@@ -2,13 +2,12 @@ class Collection {
     constructor(collection, collectionAttributes) {
         this.id = collection.id
         this.name = collectionAttributes.name
-        // NAME IS COMING UP UNKNOWN ATTRIBUTE
         this.image_url = collectionAttributes.image_url
         this.description = collectionAttributes.description
         this.source_url = collectionAttributes.source_url
         this.category = collectionAttributes.category
         Collection.all.push(this)
-        console.log(this);
+        //console.log(this);
     }
     renderCollectionCard() {
         //debugger

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -52,7 +52,6 @@
           <p class="text-muted">Gullah-G helps you keep track and share the Gullah-Geechee culture and cultural favorites.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
-
         </div>
       </div>
     </div>
@@ -76,27 +75,27 @@
 
   <section class="jumbotron text-center">
     <div class="collection-container">
-      <form id="create-collection-form">
-        <div class="form-group">
+      <form id="create-collection-form" style="">
+        
           <label for="input-name"><p class="input-text">Name</p></label>
           <input type="text" class="form-control" id="input-name" aria-describedby="nameHelp">
           <small id="input-name" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
+        <br></br>
+        
           <label for="input-url">Image Url</label>
           <input type="text" class="form-control" id="input-url" aria-describedby="imageHelp">
           <small id="imageHelp" class="form-text text-muted">Ex. Http://......</small>
-        </div>
-        <div class="form-group">
+        <br></br>
+        
           <label for="input-description">Description</label>
           <textarea class="form-control" id="input-description" rows="3"></textarea>
-        </div>
-        <div class="form-group">
+        <br></br>
+        
           <label for="input-source-url">Source Url</label>
           <input type="text" class="form-control" id="input-source-url" aria-describedby="sourceHelp">
           <small id="sourceHelp" class="form-text text-muted">Where did you get this information from</small>
-        </div>
-        <div class="form-group"></div>
+        <br></br>
+        <br></br>
           <select id="categories" name="categories">
             <p>Select a Category</p>
             <option value="1">Food</option>
@@ -104,9 +103,9 @@
             <option value="3">Clothing</option>
             <option value="4">Travel</option>
           </select>
-        </div>
+        <br></br>
        
-        <button type="submit" class="btn btn-success">Submit</button>
+        <input id= 'create-button' type="submit" name="submit" value="Create New Content" class="submit>
       </form>
     </div>
   </section>

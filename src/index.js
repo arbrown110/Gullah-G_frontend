@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   getCollections()
 
     const createCollectionForm = document.querySelector("#create-collection-form")
-
     createCollectionForm.addEventListener("submit", (e) => createFormHandler(e))
+
 })
 
 
 function getCollections() {
-    fetch (endPoint)
+    fetch(endPoint)
     .then(response => response.json())
     .then(collections => {
         collections.data.forEach(collection => {
@@ -20,7 +20,7 @@ function getCollections() {
           //debugger
             let newCollection = new Collection(collection, collection.attributes)
           // new instance  hit debugger
-            document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard() //error possbily due to "name" attribute
+            document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard()
         })
     })
 }
@@ -29,7 +29,6 @@ function getCollections() {
 function createFormHandler(e) {
     e.preventDefault()
     //console.log(e);
-    //WHY IS THIS NOT WORKING!!!!!!!!!!!!!!!!!
     const nameInput = document.querySelector('#input-name').value
     const imageInput = document.querySelector('#input-url').value
     const descriptionInput = document.querySelector('#input-description').value
