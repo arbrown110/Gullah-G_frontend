@@ -74,64 +74,65 @@
 <main role="main">
 
   <section class="jumbotron text-center">
-    <div class="collection-container">
-      <form id="create-collection-form" style="">
-        
-          <label for="input-name"><p class="input-text">Name</p></label>
-          <input type="text" class="form-control" id="input-name" aria-describedby="nameHelp">
-          <small id="input-name" class="form-text text-muted"></small>
-        <br></br>
-        
-          <label for="input-url">Image Url</label>
-          <input type="text" class="form-control" id="input-url" aria-describedby="imageHelp">
-          <small id="imageHelp" class="form-text text-muted">Ex. Http://......</small>
-        <br></br>
-        
-          <label for="input-description">Description</label>
-          <textarea class="form-control" id="input-description" rows="3"></textarea>
-        <br></br>
-        
-          <label for="input-source-url">Source Url</label>
-          <input type="text" class="form-control" id="input-source-url" aria-describedby="sourceHelp">
-          <small id="sourceHelp" class="form-text text-muted">Where did you get this information from</small>
-        <br></br>
-        <br></br>
-          <select id="categories" name="categories">
-            <p>Select a Category</p>
-            <option value="1">Food</option>
-            <option value="2">Media</option>
-            <option value="3">Clothing</option>
-            <option value="4">Travel</option>
-          </select>
-        <br></br>
-       
-        <input id= 'create-button' type="submit" name="submit" value="Create New Content" class="submit>
-      </form>
-    </div>
+  
+    
+      <div class="container" id="collection-container">
   </section>
-
+    
+  
+  
+  <!-- INSIDE ROW DIV -->
   <div class="album py-5 bg-light">
-    <div class="container" id="collection-container">
-
+    <div class="collection-container">
+     <form id="create-collection-form" style="">
+    
+      <label for="input-name"><p class="input-text">Name</p></label>
+      <input type="text" class="form-control" id="input-name" aria-describedby="nameHelp">
+      <small id="input-name" class="form-text text-muted"></small>
+      <br></br>
+    
+      <label for="input-url">Image Url</label>
+      <input type="text" class="form-control" id="input-url" aria-describedby="imageHelp">
+      <small id="imageHelp" class="form-text text-muted">Ex. Http://......</small>
+      <br></br>
+    
+      <label for="input-description">Description</label>
+      <textarea class="form-control" id="input-description" rows="3"></textarea>
+      <br></br>
+    
+      <label for="input-source-url">Source Url</label>
+      <input type="text" class="form-control" id="input-source-url" aria-describedby="sourceHelp">
+      <small id="sourceHelp" class="form-text text-muted">Where did you get this information from</small>
+      <br></br>
+      <br></br>
+      <select id="categories" name="categories">
+        <p>Select a Category</p>
+        <option value="1">Food</option>
+        <option value="2">Media</option>
+        <option value="3">Clothing</option>
+        <option value="4">Travel</option>
+      </select>
+      <br></br>
+                
+      <input id= 'create-button' type="submit" name="submit" value="Create New Content" class="submit">
+     </form>
+ 
       <div class="row" >
-
-
-        <!-- INSIDE ROW DIV -->
       </div>
     </div>
   </div>
-
+          
 </main>
-
-<footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
-    <p>Gullah-G &copy; Built with Bootstrap</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
-  </div>
-</footer>
-
-    </body>
-</html>
+        
+        <footer class="text-muted">
+          <div class="container">
+            <p class="float-right">
+              <a href="#">Back to top</a>
+            </p>
+            <p>Gullah-G &copy; Built with Bootstrap</p>
+            <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+          </div>
+        </footer>
+        
+      </body>
+      </html>
