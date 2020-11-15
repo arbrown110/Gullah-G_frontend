@@ -10,7 +10,6 @@ class Collection {
         //console.log(this);
     }
     renderCollectionCard() {
-        //debugger
         return `
         <div class="dropdown">
             <img src=${this.image_url} alt="input-image-url" width="200" height="90">
@@ -21,15 +20,15 @@ class Collection {
                  <br></br>
                  ${this.description}
                  <br></br>
-                 ${this.source_url}
+                 <a href="#" class="text-decoration-none">${this.source_url}</a>
                   <br></br>
                   <small class="text-muted">Category: ${this.category.name}</small> 
+                  <input type="button" id="delete" onclick="removeCollection()" value="Delete"/><br/>
                 </div>
             </div>
         </div>
         `
 
-        
     }
 }
 // ES6 sugar class collection
