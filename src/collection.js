@@ -12,9 +12,9 @@ class Collection {
     renderCollectionCard() {
         return `
         <div class="dropdown">
-            <img src=${this.image_url} alt="input-image-url" width="200" height="90">
+            <img src=${this.image_url} alt="input-image-url" width="100" height="100">
             <div class="dropdown-content">
-                <img src=${this.image_url} alt="input-image-url" width="300" height="200">
+                <img src=${this.image_url} alt="input-image-url" width="200" height="90">
                 <div class="desc">
                  ${this.name}
                  <br></br>

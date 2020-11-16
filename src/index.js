@@ -1,3 +1,4 @@
+
 const endPoint= "http://localhost:3000/api/v1/collections"
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -62,8 +63,23 @@ function postFetch(name, image_url, description, source_url, category_id) {
     })
 }
 
-function removeCollection() {
- // console.log("insideRemoveItem");
+function removeCollection(id){
+  const collect = document.getElementById("collection-container") 
+  fetch(`http:localhost:3000/collections/${id}`, {
+      method: 'DELETE',
+      headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+      }
+  })
+  .then(resp => resp.json())
+  .then(data => {
+      const piece = document.querySelector(`img[data-id = '${id}']`).parentElement.parentElement.parentElement
+      piece.parentNode.removeChild(piece)
+  })
+ // .then(responseJSON => {
+ //   let remainingCollection = document.querySelector('')
+ // })
 
  // collection id as an arguement ---> access Id through collection-card -- inside on-click attribute
   
