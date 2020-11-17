@@ -9,9 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const createCollectionForm = document.querySelector("#create-collection-form")
     createCollectionForm.addEventListener("submit", (e) => createFormHandler(e))
 
+    const 
   
 })
+//removeCollection.addEventlistener("click", (e) => renderCollectionCard()); 
 
+}
 //document.querySelectorAll('#delete').forEach(collection => collection.addEventListener('click', removeCollection))
 
 function getCollections() {
@@ -46,7 +49,7 @@ function postFetch(name, image_url, description, source_url, category_id) {
     console.log(name, image_url, description, source_url, category_id);
     // build body object
     const bodyData = {name, image_url, description, source_url, category_id}
-  
+ 
     fetch(endPoint, {
       // POST request
       method: "POST",

@@ -9,6 +9,7 @@ class Collection {
         Collection.all.push(this)
         //console.log(this);
     }
+
     renderCollectionCard() {
         return `
         <div class="dropdown">
@@ -22,14 +23,17 @@ class Collection {
                  <br></br>
                  <a href="#" class="text-decoration-none">${this.source_url}</a>
                   <br></br>
-                  <small class="text-muted">Category: ${this.category.name}</small> 
-                  <input type="button" id="delete" onclick="removeCollection()" value="Delete"/><br/>
+                  <small class="text-muted">Category: ${this.category.name}</small>
+                  <br></br>
+                  <br></br>
+                  <button id="delete" data-id="${this.id}">Delete</button>
                 </div>
             </div>
         </div>
         `
 
     }
+
 }
 // ES6 sugar class collection
 Collection.all = []; //global scope
