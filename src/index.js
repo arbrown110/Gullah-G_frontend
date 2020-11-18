@@ -9,24 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const createCollectionForm = document.querySelector("#create-collection-form")
     createCollectionForm.addEventListener("submit", (e) => createFormHandler(e))
 
-    const 
+    
+    
+  
+  //removeCollection.addEventlistener("click", (e) => renderCollectionCard()); 
   
 })
-//removeCollection.addEventlistener("click", (e) => renderCollectionCard()); 
-
-}
-//document.querySelectorAll('#delete').forEach(collection => collection.addEventListener('click', removeCollection))
 
 function getCollections() {
-    fetch(endPoint)
-    .then(response => response.json())
-    .then(collections => {
-        collections.data.forEach(collection => {
-            // nested data in console and over each rending attributes
-          
-            let newCollection = new Collection(collection, collection.attributes)
-          
-            document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard()
+  fetch(endPoint)
+  .then(response => response.json())
+  .then(collections => {
+    collections.data.forEach(collection => {
+      // nested data in console and over each rending attributes
+      
+      let newCollection = new Collection(collection, collection.attributes)
+      
+      document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard()
+      document.querySelectorAll('#delete').forEach(collection => collection.addEventListener('click', removeCollection))
         })
     })
 }
@@ -66,19 +66,19 @@ function postFetch(name, image_url, description, source_url, category_id) {
     })
 }
 
-function removeCollection(id){
+function removeCollection(){
   const collect = document.getElementById("collection-container") 
-  fetch(`http:localhost:3000/collections/${id}`, {
+  fetch(endPoint + `/(event.target.dataset.id)` , {
       method: 'DELETE',
       headers: {
           "Content-Type": "application/json",
           "Accept": "application/json"
       }
   })
-  .then(resp => resp.json())
   .then(data => {
-      const piece = document.querySelector(`img[data-id = '${id}']`).parentElement.parentElement.parentElement
-      piece.parentNode.removeChild(piece)
+    
+     const piece = document.querySelector(`button[data-id = '${id}']`).parentElement.parentElement.parentElement.piece.remove()
+
   })
  // .then(responseJSON => {
  //   let remainingCollection = document.querySelector('')
