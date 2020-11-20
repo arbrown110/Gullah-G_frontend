@@ -9,14 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const createCollectionForm = document.querySelector("#create-collection-form")
     createCollectionForm.addEventListener("submit", (e) => createFormHandler(e))
 
-    
-    
-  
-  //removeCollection.addEventlistener("click", (e) => renderCollectionCard()); 
-  
+
 })
 
 function getCollections() {
+  //event.preventDefault
+  clearScreen()
   fetch(endPoint)
   .then(response => response.json())
   .then(collections => {
@@ -26,11 +24,14 @@ function getCollections() {
       let newCollection = new Collection(collection, collection.attributes)
       
       document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard()
-      document.querySelectorAll('#delete').forEach(collection => collection.addEventListener('click', removeCollection))
+    document.querySelectorAll('#delete').forEach(collection => collection.addEventListener('click', removeCollection))
         })
     })
 }
 
+function clearScreen(){
+  document.querySelector('#collection-container').innerHTML = ""
+}
 
 function createFormHandler(e) {
     e.preventDefault()
@@ -42,14 +43,14 @@ function createFormHandler(e) {
     const categoryInput = document.querySelector('#categories').value
     const categoryId = parseInt(categoryInput)
     postFetch(nameInput, imageInput, descriptionInput, sourceInput, categoryId)
-}
-
-function postFetch(name, image_url, description, source_url, category_id) {
+  }
+  
+  function postFetch(name, image_url, description, source_url, category_id) {
     // confirm these values are coming through properly
     console.log(name, image_url, description, source_url, category_id);
     // build body object
     const bodyData = {name, image_url, description, source_url, category_id}
- 
+    
     fetch(endPoint, {
       // POST request
       method: "POST",
@@ -58,46 +59,37 @@ function postFetch(name, image_url, description, source_url, category_id) {
     })
     .then(response => response.json())
     .then(collection => {
-        console.log(collection);
-        const collectionData = collection.data
-        let newCollection = new Collection(collectionData, collectionData.attributes)
-
-          document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard() //error possbily due to "name" attribute
+      console.log(collection);
+      const collectionData = collection.data
+      let newCollection = new Collection(collectionData, collectionData.attributes)
+      
+      document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard() //error possbily due to "name" attribute
     })
-}
-
-function removeCollection(){
-  const collect = document.getElementById("collection-container") 
-  fetch(endPoint + `/(event.target.dataset.id)` , {
-      method: 'DELETE',
-      headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
+  }
+  
+  function removeCollection(event){
+    event.preventDefault()
+   let id = event.target.dataset.id
+   const collect = document.getElementById("collection-container") 
+   
+   fetch(`http://localhost:3000/api/v1/collections/${id}`, {
+     method: 'DELETE',
+     headers: {
+       "Content-Type": "application/json",
+       "Accept": "application/json"
       }
+    
   })
   .then(data => {
     
-     const piece = document.querySelector(`button[data-id = '${id}']`).parentElement.parentElement.parentElement.piece.remove()
-
+   const piece = document.querySelector(`button[data-id = '${id}']`).parentElement.parentElement
+  piece.remove()
+      
+      
+      
+      
+  getCollections()
   })
- // .then(responseJSON => {
- //   let remainingCollection = document.querySelector('')
- // })
-
+}
  // collection id as an arguement ---> access Id through collection-card -- inside on-click attribute
   
-
- 
- //const bodyData = {name, image_url, description, source_url, category_id}
- 
- //const removeObj = {
-   //   method: "DELETE",
-   //   headers: {"Content-Type": "application/json"}
-   //  body: JSON.stringify(bodyData)
-   //  }
-   //  fetch(endPoint + `/collection/${event.target.dataset.id}`, removeObj)
-   // .then(response => response.json())
-
-
- 
-  }

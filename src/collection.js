@@ -12,7 +12,7 @@ class Collection {
 
     renderCollectionCard() {
         return `
-        <div class="dropdown">
+        <div class="dropdown" id =${this.id}>
             <img src=${this.image_url} alt="input-image-url" width="100" height="100">
             <div class="dropdown-content">
                 <img src=${this.image_url} alt="input-image-url" width="200" height="90">
@@ -20,13 +20,13 @@ class Collection {
                  ${this.name}
                  <br></br>
                  ${this.description}
-                 <br></br>
+                 
                  <a href="#" class="text-decoration-none">${this.source_url}</a>
-                  <br></br>
+                  
                   <small class="text-muted">Category: ${this.category.name}</small>
-                  <br></br>
-                  <br></br>
-                  <button id="delete" data-id="${this.id}">Delete</button>
+                  
+                <button id="delete" data-id="${this.id}">Delete</button> 
+                 
                 </div>
             </div>
         </div>
