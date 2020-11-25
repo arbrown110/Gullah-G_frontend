@@ -25,7 +25,7 @@ class Collection {
                   
                   <small class="text-muted">Category: ${this.category.name}</small>
                   
-                <button id="delete" data-id="${this.id}">Delete</button> 
+                <button class="delete" onclick="removeCollection()" data-id="${this.id}">Delete</button> 
                  
                 </div>
             </div>

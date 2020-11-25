@@ -8,9 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const createCollectionForm = document.querySelector("#create-collection-form")
     createCollectionForm.addEventListener("submit", (e) => createFormHandler(e))
+  //removeCollection()
+  //document.querySelectorAll('.delete').forEach(collection => collection.addEventListener('click', removeCollection))
+}) //rwf
 
-
-})
 
 function getCollections() {
   //event.preventDefault
@@ -24,7 +25,7 @@ function getCollections() {
       let newCollection = new Collection(collection, collection.attributes)
       
       document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard()
-    document.querySelectorAll('#delete').forEach(collection => collection.addEventListener('click', removeCollection))
+   // document.querySelectorAll('#delete').forEach(collection => collection.addEventListener('click', removeCollection))
         })
     })
 }
@@ -44,6 +45,15 @@ function createFormHandler(e) {
     const categoryId = parseInt(categoryInput)
     postFetch(nameInput, imageInput, descriptionInput, sourceInput, categoryId)
   }
+  
+  function clearForm() {
+    document.querySelector('#input-name').value = ""
+    document.querySelector('#input-url').value = ""
+    document.querySelector('#input-description').value = ""
+    document.querySelector('#input-source-url').value = ""
+    document.querySelector('#categories').value = ""
+  }
+  
   
   function postFetch(name, image_url, description, source_url, category_id) {
     // confirm these values are coming through properly
@@ -65,30 +75,29 @@ function createFormHandler(e) {
       
       document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard() //error possbily due to "name" attribute
     })
+    clearForm()
   }
   
-  function removeCollection(event){
-    event.preventDefault()
-   let id = event.target.dataset.id
-   const collect = document.getElementById("collection-container") 
+  function removeCollection(){
+   // event.preventDefault()
+    let id = event.target.dataset.id
+    const collect = document.getElementById("collection-container") 
    
-   fetch(`http://localhost:3000/api/v1/collections/${id}`, {
+    fetch(`http://localhost:3000/api/v1/collections/${id}`, {
      method: 'DELETE',
      headers: {
        "Content-Type": "application/json",
        "Accept": "application/json"
       }
-    
-  })
-  .then(data => {
-    
-   const piece = document.querySelector(`button[data-id = '${id}']`).parentElement.parentElement
+      
+    })
+    .then(data => {
+      const piece = document.getElementById(`${id}`)
+     // debugger
+    //console.log(piece) 
+    // const piece = document.querySelector(`button[data-id = '${id}']`).parentElement.parentElement
   piece.remove()
       
-      
-      
-      
-  getCollections()
   })
 }
  // collection id as an arguement ---> access Id through collection-card -- inside on-click attribute
