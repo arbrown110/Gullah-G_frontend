@@ -3,7 +3,7 @@ const endPoint= "http://localhost:3000/api/v1/collections"
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log("Dom is Loaded");
-  
+  fetchCategory()
   getCollections()
 
     const createCollectionForm = document.querySelector("#create-collection-form")
@@ -46,6 +46,29 @@ function createFormHandler(e) {
     postFetch(nameInput, imageInput, descriptionInput, sourceInput, categoryId)
   }
   
+function fetchCategory() {
+  fetch("http://localhost:3000/api/v1/categories")
+  .then(response => response.json())
+  .then(categories => {
+    //debugger
+    categories.forEach(function(category)  {
+      const newCategory = (new Category(category)).renderCategoryToCard
+      // nested data in console and over each rending attributes
+      // let newCategory += new Category(category)
+    //   console.log(category)
+    //   // debugger
+    //  const option = document.createElement('option')
+    //  option.textContent = category.name
+    //  option.id = category.id
+     document.getElementById('categories').appendChild(newCategory)
+
+        })
+    })
+}
+
+
+
+
   function clearForm() {
     document.querySelector('#input-name').value = ""
     document.querySelector('#input-url').value = ""
@@ -56,6 +79,7 @@ function createFormHandler(e) {
   
   
   function postFetch(name, image_url, description, source_url, category_id) {
+    debugger
     // confirm these values are coming through properly
     console.log(name, image_url, description, source_url, category_id);
     // build body object
@@ -74,6 +98,7 @@ function createFormHandler(e) {
       let newCollection = new Collection(collectionData, collectionData.attributes)
       
       document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard() //error possbily due to "name" attribute
+    
     })
     clearForm()
   }

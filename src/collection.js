@@ -32,6 +32,11 @@ class Collection {
         </div>
         `
 
+// renderCategoryToCard() {
+// 
+//<small class="text-muted">Category: ${this.category.name}</small> << making sure this attaches correctly
+//}
+
     }
 
 }
