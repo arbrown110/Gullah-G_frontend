@@ -15,6 +15,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   
       <!-- JS Project Tags -->
+      <script type="text/javascript" src="src/category.js"></script>
       <script type="text/javascript" src="src/collection.js"></script>
       <script type="text/javascript" src="src/index.js"></script>
   
@@ -91,13 +92,15 @@
             <small id="sourceHelp" class="form-text text-muted">Where did you get this information from</small>
             <br></br>
             <br></br>
-            <select id="categories" name="categories">
-              <!--p>Select a Category</p>
+            <select id="categories"  onsubmit="postFetch()">
+              <option  >Select you Category</option>
+              
+            </select>
+              <!-- <p>Select a Category</p>
               <option value="">Food</option>
               <option value="">Media</option>
               <option value="">Clothing</option>
-              <option value="">Travel</option-->
-            </select>
+              <option value="">Travel</option> -->
             <br></br>
           <button type="submit" class="btn btn-primary">Submit</button>
           </div>

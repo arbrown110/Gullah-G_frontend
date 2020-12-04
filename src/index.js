@@ -4,6 +4,7 @@ const endPoint= "http://localhost:3000/api/v1/collections"
 document.addEventListener('DOMContentLoaded', () => {
   console.log("Dom is Loaded");
   fetchCategory()
+  //getOptionId()
   getCollections()
 
     const createCollectionForm = document.querySelector("#create-collection-form")
@@ -49,26 +50,26 @@ function createFormHandler(e) {
 function fetchCategory() {
   fetch("http://localhost:3000/api/v1/categories")
   .then(response => response.json())
-  .then(categories => {
-    //debugger
-    categories.forEach(function(category)  {
-      const newCategory = (new Category(category)).renderCategoryToCard
-      // nested data in console and over each rending attributes
-      // let newCategory += new Category(category)
-    //   console.log(category)
-    //   // debugger
-    //  const option = document.createElement('option')
-    //  option.textContent = category.name
-    //  option.id = category.id
-     document.getElementById('categories').appendChild(newCategory)
-
-        })
-    })
+  .then(populateCategoryDropDown ) 
+    //populateCategoryDropDown()
 }
 
+function populateCategoryDropDown(categories) {
+  //debugger
+  categories.forEach( function(category) {
+    new Category(category)
+    const option = document.createElement("option");
+    option.textContent = category.name;
+    option.value = category.id;
+    document.getElementById('categories').appendChild(option);
+  })
+}
 
-
-
+// function getOptionId(event) {
+//   //event.preventDefault()
+//  val = event.target.value;  
+//  // debugger
+// }
   function clearForm() {
     document.querySelector('#input-name').value = ""
     document.querySelector('#input-url').value = ""
@@ -79,7 +80,9 @@ function fetchCategory() {
   
   
   function postFetch(name, image_url, description, source_url, category_id) {
-    debugger
+    let categoryId = document.getElementById('categories').value
+    //debugger
+    categoryId = category_id
     // confirm these values are coming through properly
     console.log(name, image_url, description, source_url, category_id);
     // build body object
@@ -127,3 +130,25 @@ function fetchCategory() {
 }
  // collection id as an arguement ---> access Id through collection-card -- inside on-click attribute
   
+//  class Category {
+//    static all = []
+//   constructor(category) {
+//       this.id = category.id
+//       this.name = category.name
+//       //this.categoryDropDown = document.getElementById("categories");
+//       //this.renderCategoryToCard();
+//       Category.all.push(this);
+//       //console.log(this);
+//    }
+//    renderCategoryToCard () {
+// //     return (`
+// //     <option  id= "${this.id}"> ${this.name} </option>
+
+// //  `)
+//     let option = document.createElement("option")
+//       option.value = category.attributes.id
+//       option.innerHTML = category.attributes.name
+//       this.categoryDropDown.appendChild(option)
+//    }
+//  }
+
