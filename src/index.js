@@ -61,6 +61,7 @@ function createFormHandler(e) {
     .then(collection => {
       console.log(collection);
       const collectionData = collection.data
+      debugger
       let newCollection = new Collection(collectionData, collectionData.attributes)
       
       document.querySelector('#collection-container').innerHTML += newCollection.renderCollectionCard() //error possbily due to "name" attribute
@@ -83,7 +84,8 @@ function createFormHandler(e) {
   .then(data => {
     
    const piece = document.querySelector(`button[data-id = '${id}']`).parentElement.parentElement
-  piece.remove()
+  debugger
+   piece.remove()
       
       
       

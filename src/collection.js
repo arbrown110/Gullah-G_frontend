@@ -20,13 +20,9 @@ class Collection {
                  ${this.name}
                  <br></br>
                  ${this.description}
-                 
                  <a href="#" class="text-decoration-none">${this.source_url}</a>
-                  
                   <small class="text-muted">Category: ${this.category.name}</small>
-                  
                 <button id="delete" data-id="${this.id}">Delete</button> 
-                 
                 </div>
             </div>
         </div>

@@ -21,73 +21,13 @@
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  
-      <style>
-        * {
-          box-sizing: border-box;
-        }
-        
-        body {
-          font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        /* Style the header */
-        header {
-          background-color: #666;
-          padding: 30px;
-          text-align: center;
-          font-size: 15px;
-          color: rgb(0, 0, 0);
-        }
-        
-        /* Create two columns/boxes that floats next to each other */
-        nav {
-          float: left;
-          width: 20%;
-          /*height: 100px; /* only for demonstration, should be removed */
-          background: rgb(0, 0, 0);
-          padding: 20px;
-        }
-        
-        /* Style the list inside the menu */
-        nav ul {
-          list-style-type: none;
-          padding: 0;
-        }
-        
-        article {
-          float: left;
-          padding: 20px;
-          width: 60%;
-          background-color: #000000;
-          height: 200px; /* only for demonstration, should be removed */
-        }
-        
-        /* Clear floats after the columns */
-        section:after {
-          content: "";
-          display: table;
-          clear: both;
-        }
-        
-        /* Style the footer */
-        footer {
-          background-color: #777;
-          padding: 10px;
-          text-align: center;
-          color: rgb(5, 0, 0);
-        }
-        
-        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-        @media (max-width: 500px) {
-          nav, article {
-            width: 90%;
-            height: auto;
-          }
-        }
-        </style>
+      <!--script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script-->
+      <!--script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script--->
+      <!--link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"--->
+      <!--script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script-->
+     
+      <!------ Include-->
+     
       <!-- Custom styles for this template -->
       <link href="index.css" rel="stylesheet">
     </head>
@@ -117,21 +57,23 @@
           <img src="https://www.nps.gov/common/uploads/place/nri/20190424/places/1BD4DF43-DC9B-8CE4-683C2C662DCD349F/1BD4DF43-DC9B-8CE4-683C2C662DCD349F.jpg" width="100" height="100" alt="">
           <strong class="site-title">Gullah-Geechee Cultural Collection</strong>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
       </div>
     </div>
     <br></br>
-    <div class="container" id="collection-container">
+    <!-- <div class="container" id="collection-container"> -->
     <!-- NAV BAR ENDS -->
      <br></br>
   </header>
-  <div class="container" id="collection-container"></div>
+  <!-- <div class="container" id="collection-container"></div> -->
  <main role="main">
-    <div class="container" id="collection-container"></div>
+    <!-- <div class="container" id="collection-container"></div> -->
   <article>
-    <section class="jumbotron text-center">
+    something
+    <div class="container" id="collection-container"></div>
+    <!-- <section class="jumbotron text-center">
       <div class="container">
         <form id="create-collection-form">
           <div class="form-group">
@@ -153,7 +95,7 @@
             <input type="text" class="form-control" id="input-source-url" aria-describedby="sourceHelp">
             <small id="sourceHelp" class="form-text text-muted">Where did you get this information from</small>
             <br></br>
-            <br></br>
+            
             <select id="categories" name="categories">
               <p>Select a Category</p>
               <option value="1">Food</option>
@@ -166,12 +108,52 @@
           </div>
         </form>
       </div>
-    </section>
+    </section> -->
   </article>
-    <div class="album py-5 bg-light">
+  <br></br>
+  <br></br>
+  <section class="create-collection-form">
+    <div class="container">
+      <form id="create-collection-form">
+        <div class="form-group">
+          <label for="input-name"><p class="input-text">Name</p></label>
+          <input type="text" class="form-control" id="input-name" aria-describedby="nameHelp">
+          <small id="input-name" class="form-text text-muted"></small>
+          <br></br>
+        
+          <label for="input-url">Image Url</label>
+          <input type="text" class="form-control" id="input-url" aria-describedby="imageHelp">
+          <small id="imageHelp" class="form-text text-muted">Ex. Http://......</small>
+          <br></br>
+        
+          <label for="input-description">Description</label>
+          <textarea class="form-control" id="input-description" rows="3"></textarea>
+          <br></br>
+        
+          <label for="input-source-url">Source Url</label>
+          <input type="text" class="form-control" id="input-source-url" aria-describedby="sourceHelp">
+          <small id="sourceHelp" class="form-text text-muted">Where did you get this information from</small>
+          <br></br>
+          <!-- <br></br> -->
+          <select id="categories" name="categories">
+            <p>Select a Category</p>
+            <option value="1">Food</option>
+            <option value="2">Media</option>
+            <option value="3">Clothing</option>
+            <option value="4">Travel</option>
+          </select>
+          <br></br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <br></br>
+  <br></br>
+    <!-- <div class="album py-5 bg-light">
       <div class="container" id="collection-container">
   
-        <div class="row" >
+        <div class="row" > -->
   
   
           <!-- INSIDE ROW DIV -->
