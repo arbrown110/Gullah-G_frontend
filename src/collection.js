@@ -22,11 +22,18 @@ class Collection {
                  ${this.description}
                  <a href="#" class="text-decoration-none">${this.source_url}</a>
                   <small class="text-muted">Category: ${this.category.name}</small>
-                <button id="delete" data-id="${this.id}">Delete</button> 
+                  
+                <button class="delete" onclick="removeCollection()" data-id="${this.id}">Delete</button> 
+                 
                 </div>
             </div>
         </div>
         `
+
+// renderCategoryToCard() {
+// 
+//<small class="text-muted">Category: ${this.category.name}</small> << making sure this attaches correctly
+//}
 
     }
 
