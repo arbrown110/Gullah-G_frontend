@@ -24,7 +24,7 @@ header,
 
 
 .top-nav-collapse {
-  background-color: #32343e57 !important;
+  background-color: #3a3d4d81 !important;
 }
 
 .navbar:not(.top-nav-collapse) {
@@ -33,18 +33,18 @@ header,
 
 @media (max-width: 791px) {
   .navbar:not(.top-nav-collapse) {
-    background: #3d3f4a !important;
+    background: #303868 !important;
   }
 }
  */
 
  
 .card {
-  background-color: rgba(4, 109, 67, 0.45);
+  background-color: rgba(4, 109, 67, 0.606);
 }
 
 .md-form label {
-  color: #ffffff;
+  color: #850909;
 }
 
 h6 {
@@ -52,7 +52,7 @@ h6 {
 }
 
 h1 {
-  color: white;
+  color: rgb(104, 43, 43);
   text-align: center;
 }
  
@@ -60,16 +60,16 @@ h1 {
 
 
 .dropdown {
-  position: relative;
+  position: center;
   display: inline-block;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #ebded9d1;
   min-width: 10px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(149, 6, 6, 0.2);
   z-index: 1;
 }
 
@@ -79,31 +79,60 @@ h1 {
 }
 
 .desc {
-  padding: 15px;
+  /* padding: 15px; */
   text-align: center;
+
 }
 
 
 .create-collection-form {
   padding:10px;
-  border:0;
+  top: 80%;
+  left: 30%;
+  /* margin: -25px 0 0 -25px; */
+  /* border:0; */
   box-shadow:0 0 15px 4px rgb(235, 234, 234);
   margin-bottom: 20px 0;
   background-color: #0b519861;
   width: 200px;
+  height: 700px;
  text-align: center;
 }
+
+.collection-form {
+  position:relative;
+  width: 200px;
+  height: 700px;
+  padding:10px;
+  top: 80%;
+  left: 30%;
+  margin: -25px 0 0 -25px; 
+  border:0;
+  background-color: #91802382;
+}
+
 
  body{
   background-image:url(https://dtjew9b6f6zyn.cloudfront.net/wp-content/uploads/2015/03/Screen-Shot-2015-03-23-at-9.22.42-AM.png);
   background-repeat:repeat;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
   background-size: 90%;
+}
+
+.text-muted {
+  color: #070a0c!important;
 }
 
 footer{
 
 margin-top: 40px;
 padding-top: 20px;
+
 }
 .bg__card__navbar{
 background-color: #000000;
